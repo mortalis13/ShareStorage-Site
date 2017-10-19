@@ -1,0 +1,149 @@
+
+body {
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size: 14px;
+  color: #333;
+}
+
+a {
+  color: #1a7847;
+  text-decoration: none;
+}
+a:hover,
+a:focus,
+a:active {
+  color: #1a7847;
+  text-decoration: underline;
+}
+
+.s_button {
+  width: 100px;
+  height: 34px;
+  background: #eae9e9;
+  border: 1px solid #777;
+  font-size: 14px;
+  cursor: pointer;
+  border-radius: 0;
+}
+.s_button:hover,
+.s_button:focus,
+.s_button:active {
+  background: #f7f7f7;
+  border-color: #555;
+}
+
+.auto-width{
+  width: 1%;
+  white-space: nowrap;
+}
+
+.main-content {
+  margin: 30px 20px;
+}
+
+.text-notes {
+  float: left;
+  padding-right: 30px;
+  width: 40%;
+}
+.files {
+  float: left;
+  width: 55%;
+}
+
+.text-notes .main-note-text {
+  margin-bottom: 10px;
+}
+.text-notes #main-note {
+  width: 100%;
+  max-width: 100%;
+  height: 200px;
+  padding: 5px;
+  border: 1px solid #aaa;
+  /*resize: vertical;*/
+}
+.text-notes .note-controls {
+  float: left;
+  margin-right: 15px;
+}
+.text-notes #note-messages {
+  padding-top: 7px;
+  font-weight: 700;
+  cursor: default;
+}
+.text-notes #note-messages.note-saved-ok {
+  color: #316f2e;
+}
+.text-notes #note-messages.note-saved-error {
+  color: #9b3939;
+}
+
+.files .upload-form {
+  margin-bottom: 20px;
+}
+.files #file {
+  height: 34px;
+}
+.files .fileinput-button {
+  width: auto;
+}
+.upload-zone {
+  float: left;
+  margin-right: 15px;
+}
+#upload-progress {
+  height: 34px;
+  margin: 0;
+  border-radius: 0;
+}
+#upload-progress .progress-bar {
+  background-color: #70ab70;
+}
+
+.dropzone {
+  padding: 14px 18px;
+  background: #fff;
+  border: 1px solid #aaa;
+}
+.dropzone.in {
+  border-color: #999;
+  box-shadow: inset 0 0 5px #00000044;
+}
+.dropzone #drop-text{
+  text-align: center;
+  font-weight: 700;
+  margin-top: 15px;
+}
+
+.files-table{
+  border-collapse: collapse;
+  border: 1px solid #aaa;
+  width: 100%;
+}
+.files-table .header td{
+  font-weight: 700;
+}
+.files-table td{
+  border: 1px solid #aaa;
+  padding: 8px 10px;
+}
+.files-table .s_button {
+  width: 80px;
+  height: 26px;
+}
+.files-table button.download-file {
+  background: #c9e0ea;
+}
+.files-table button.delete-file {
+  background: #ffa5a5;
+}
+.files-table button.download-file:hover,
+.files-table button.download-file:focus,
+.files-table button.download-file:active {
+  background: #d7f0fa;
+}
+.files-table button.delete-file:hover,
+.files-table button.delete-file:focus,
+.files-table button.delete-file:active {
+  background: #fdc9c9;
+}
