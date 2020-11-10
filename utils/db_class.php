@@ -31,6 +31,12 @@
       if(!$result) die("Database insert error: " . mysqli_error($this->conn));
     }
     
+    function delete_all_text_notes(){
+      $sql = "delete from text_notes";
+      $result = mysqli_query($this->conn, $sql);
+      if(!$result) die("Database delete error: " . mysqli_error($this->conn));
+    }
+    
     function get_files(){
       $sql = "select * from files order by id desc";
       $result = mysqli_query($this->conn, $sql);

@@ -71,11 +71,18 @@ a:active {
   font-weight: 700;
   cursor: default;
 }
-.text-notes #note-messages.note-saved-ok {
+.text-notes #note-messages.note-operation-ok {
   color: #316f2e;
 }
-.text-notes #note-messages.note-saved-error {
+.text-notes #note-messages.note-operation-error {
   color: #9b3939;
+}
+
+.text-notes .control-button {
+  display: inline-block;
+}
+.text-notes #delete-all-notes {
+  
 }
 
 .files .upload-form {

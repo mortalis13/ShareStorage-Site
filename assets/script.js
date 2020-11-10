@@ -1,15 +1,32 @@
+
+function set_message(text, type) {
+  var messages = $("#note-messages");
+  messages.removeClass('note-operation-error');
+  messages.removeClass('note-operation-ok');
+  messages.html(text);
+  
+  if (type == 'ok') {
+    messages.addClass('note-operation-ok');
+  }
+  else if (type == 'error') {
+    messages.addClass('note-operation-error');
+  }
+}
+
+
 $(function(){
   
   var uploadUrl = 'upload.php';
+  
+  $("#note-messages").click(function(){
+    $(this).empty();
+  });
   
   $("#save-note").click(function(){
     var url = uploadUrl;
     var text = $("#main-note").val();
     
-    var messages = $("#note-messages");
-    messages.removeClass('note-saved-error');
-    messages.removeClass('note-saved-ok');
-    messages.html('Saving note...');
+    set_message('Saving note...');
     
     $.ajax({
       url: url,
@@ -20,15 +37,39 @@ $(function(){
       },
       success: function(data){
         console.log('ajax-ok', data);
-        messages.html('&#x02713; Note saved');
-        messages.addClass('note-saved-ok');
+        set_message('&#x02713; Note saved', 'ok');
       },
       error: function(a1, a2, a3){
         console.log('ajax-error', a1, a2, a3);
-        messages.html('&#x02717; Error saving note, check the Console');
-        messages.addClass('note-saved-error');
+        set_message('&#x02717; Error saving note, check the Console', 'error');
       }
     });
+  });
+  
+  
+  $("#delete-all-notes").click(function(e){
+    var url = uploadUrl;
+    var data = {
+      action: 'deleteAllNotes',
+    };
+    
+    set_message('Deleting notes...');
+    
+    $.ajax({
+      url: url,
+      method: 'POST',
+      data: data,
+      success: function(data){
+        console.log('ajax-ok', data);
+        set_message('&#x02713; Notes deleted', 'ok');
+      },
+      error: function(a1, a2, a3){
+        console.log('ajax-error', a1, a2, a3);
+        set_message('&#x02717; Error deleting notes, check the Console', 'error');
+      }
+    });
+    
+    return false;
   });
   
   
@@ -88,11 +129,8 @@ $(function(){
     });
   });
   
-  // -----------------------------------------------------
   
-  $("#note-messages").click(function(){
-    $(this).empty();
-  });
+  // -----------------------------------------------------
   
   var dropZoneTarget = $('.dropzone');
   var inDropZone = false;

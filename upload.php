@@ -28,6 +28,14 @@
       
       die('true');
     }
+    else if($action == 'deleteAllNotes'){
+      $db = new DB();
+      $db->connect_db();
+      $db->delete_all_text_notes();
+      $db->close();
+      
+      die('true');
+    }
     else if($action == 'uploadFile') {
       $files = $_FILES['files'];
       $dir_path = 's';

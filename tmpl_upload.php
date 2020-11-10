@@ -28,7 +28,12 @@
       <textarea name="main_note" id="main-note" cols="30" rows="10"><?=$text?></textarea>
     </div>
     <div class="note-controls">
-      <button id="save-note" class="s_button">Save</button>
+      <div class="control-button">
+        <button id="save-note" class="s_button">Save</button>
+      </div>
+      <div class="control-button">
+        <a id="delete-all-notes" href="#">Delete All</a>
+      </div>
     </div>
     <div id="note-messages"></div>
   </div>

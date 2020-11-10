@@ -1,2 +1,2 @@
 
-A simple page to save text notes and upload files for sharing between PCs over the internet.
+A simple page that allows to save text notes and upload files for quick sharing.
